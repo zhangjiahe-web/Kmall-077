@@ -24,4 +24,9 @@ public class AttrServiceImpl implements AttrService {
         List<PmsBaseAttrInfo> infoList = pmsBaseAttrInfoMapper.selectByExample(example);
         return infoList;
     }
+    @Override
+    public Integer add(PmsBaseAttrInfo attrInfo) {
+        int i = pmsBaseAttrInfoMapper.insert(attrInfo);
+        return i;
+    }
 }
