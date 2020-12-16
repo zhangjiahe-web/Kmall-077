@@ -41,4 +41,5 @@ public class CatalogServiceImpl implements CatalogService {
         List<PmsBaseCatalog3> catalog3List = pmsBaseCatalog3Mapper.selectByExample(example);
         return catalog3List;
     }
+
 }

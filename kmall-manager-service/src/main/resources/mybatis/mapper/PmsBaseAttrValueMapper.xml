@@ -7,6 +7,12 @@
     <result column="attr_id" property="attrId" jdbcType="BIGINT" />
     <result column="is_enabled" property="isEnabled" jdbcType="VARCHAR" />
   </resultMap>
+  <insert id="insertBatch">
+    INSERT into pms_base_attr_value(value_name,attr_id) VALUES
+    <foreach collection="valueList" item="val" separator=",">
+      (#{val.valueName},#{attrId})
+    </foreach>
+  </insert>
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

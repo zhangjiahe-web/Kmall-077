@@ -12,4 +12,5 @@ public interface AttrService {
     public Integer add(PmsBaseAttrInfo attrInfo);
     //根据属性id查询属性值
     public List<PmsBaseAttrValue> getAttrValueList(Long attrId);
+
 }
