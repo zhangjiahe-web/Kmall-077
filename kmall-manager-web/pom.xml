@@ -20,7 +20,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.kgc.kmall</groupId>
-			<artifactId>kmall-common-util</artifactId>
+			<artifactId>kmall-web-util</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
