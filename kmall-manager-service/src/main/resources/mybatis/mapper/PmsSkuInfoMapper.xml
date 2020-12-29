@@ -11,7 +11,39 @@
     <result column="tm_id" property="tmId" jdbcType="BIGINT" />
     <result column="catalog3_id" property="catalog3Id" jdbcType="BIGINT" />
     <result column="sku_default_img" property="skuDefaultImg" jdbcType="VARCHAR" />
+    <collection property="skuImageList" ofType="com.kgc.kmall.bean.PmsSkuImage">
+      <result column="id" property="skuId" jdbcType="BIGINT" />
+      <result column="img_name" property="imgName" jdbcType="VARCHAR" />
+      <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+      <result column="product_img_id" property="spuImgId" jdbcType="BIGINT" />
+      <result column="is_default" property="isDefault" jdbcType="VARCHAR" />
+    </collection>
   </resultMap>
+  <resultMap id="SkuImageMap" type="com.kgc.kmall.bean.PmsSkuInfo" autoMapping="true">
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="product_id" property="spuId" jdbcType="BIGINT" />
+    <result column="price" property="price" jdbcType="DOUBLE" />
+    <result column="sku_name" property="skuName" jdbcType="VARCHAR" />
+    <result column="sku_desc" property="skuDesc" jdbcType="VARCHAR" />
+    <result column="weight" property="weight" jdbcType="DOUBLE" />
+    <result column="tm_id" property="tmId" jdbcType="BIGINT" />
+    <result column="catalog3_id" property="catalog3Id" jdbcType="BIGINT" />
+    <result column="sku_default_img" property="skuDefaultImg" jdbcType="VARCHAR" />
+    <collection property="skuImageList" ofType="com.kgc.kmall.bean.PmsSkuImage">
+      <result column="id" property="skuId" jdbcType="BIGINT" />
+      <result column="img_name" property="imgName" jdbcType="VARCHAR" />
+      <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+      <result column="product_img_id" property="spuImgId" jdbcType="BIGINT" />
+      <result column="is_default" property="isDefault" jdbcType="VARCHAR" />
+    </collection>
+  </resultMap>
+  <!---->
+  <select id="selectByPrimaryKey" resultMap="SkuImageMap">
+    select *
+    from view_sku_image
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <!---->
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -87,12 +119,12 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+<!--  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from pms_sku_info
     where id = #{id,jdbcType=BIGINT}
-  </select>
+  </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from pms_sku_info
     where id = #{id,jdbcType=BIGINT}

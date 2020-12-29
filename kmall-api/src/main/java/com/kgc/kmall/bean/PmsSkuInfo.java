@@ -28,6 +28,7 @@ public class PmsSkuInfo implements Serializable {
 
     List<PmsSkuSaleAttrValue> skuSaleAttrValueList;
 
+
     public List<PmsSkuImage> getSkuImageList() {
         return skuImageList;
     }

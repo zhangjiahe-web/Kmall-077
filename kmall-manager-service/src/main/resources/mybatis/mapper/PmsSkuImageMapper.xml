@@ -9,6 +9,7 @@
     <result column="product_img_id" property="spuImgId" jdbcType="BIGINT" />
     <result column="is_default" property="isDefault" jdbcType="VARCHAR" />
   </resultMap>
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

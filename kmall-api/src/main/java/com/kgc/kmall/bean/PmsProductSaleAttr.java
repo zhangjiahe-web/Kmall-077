@@ -14,6 +14,7 @@ public class PmsProductSaleAttr implements Serializable {
     //销售属性值集合
     private List<PmsProductSaleAttrValue> spuSaleAttrValueList;
 
+
     public List<PmsProductSaleAttrValue> getSpuSaleAttrValueList() {
         return spuSaleAttrValueList;
     }
