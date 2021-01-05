@@ -28,4 +28,6 @@ public interface PmsSkuInfoMapper {
     int updateByPrimaryKeySelective(PmsSkuInfo record);
 
     int updateByPrimaryKey(PmsSkuInfo record);
+    /*七、根据销售属性切换sku*/
+    List<PmsSkuInfo> selectBySpuId(Long spuId);
 }
