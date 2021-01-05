@@ -106,6 +106,7 @@ public class SkuServiceImpl implements SkuService {
         }
 return pmsSkuInfo;
     }*/
+   int ia=1;
         @Override
     public PmsSkuInfo selectBySkuId(Long id) {
             PmsSkuInfo pmsSkuInfo = null;
@@ -116,7 +117,8 @@ return pmsSkuInfo;
             if (skuInfoJson != null) {
                 pmsSkuInfo = JSON.parseObject(skuInfoJson, PmsSkuInfo.class);
                 jedis.close();
-                System.out.println("缓存");
+                System.out.println("缓存"+ia);
+                ia++;
                 return pmsSkuInfo;
 
             } else {
