@@ -28,4 +28,6 @@ public interface PmsBaseAttrInfoMapper {
     int updateByPrimaryKeySelective(PmsBaseAttrInfo record);
 
     int updateByPrimaryKey(PmsBaseAttrInfo record);
+/*根据平台属性valueid查询平台属性名和平台属性值*/
+    List<PmsBaseAttrInfo> selectAttrInfoValueListByValueId(@Param("valueIdStr") String valueIdStr);
 }
